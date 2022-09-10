@@ -1,0 +1,456 @@
+<!-- HELLO
+-
+DevFolio is a minimal, clean, lightweight and fully responsive template for Devlopers!
+Created by Anil Seervi.
+-
+GitHub repo: https://github.com/AnilSeervi/DevFolio
+README: https://github.com/AnilSeervi/DevFolio/blob/master/README.md
+-
+Have fun creating your portfolio on this template!!! -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title: add your Portfolio websites's title here -->
+    <title>Brajesh Lovanshi | Java Developer</title>
+
+    <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
+    <meta name="keywords" content="Brajesh, masai school, java" />
+
+    <!-- Improve your SEO by adding a small descrption of you -->
+    <meta name="description" content="[Your name here] | java Developer" />
+
+    <!-- Add a your png Logo to the assets folder and change the href attr accordingly  -->
+    <link rel="icon" type="image/png" href="./assets/brajesh_lovanshi.jpg" />
+    <link rel="stylesheet" href="style.css">
+    
+    
+
+    <!-- Add your primary-theme color for the value of content -->
+    <meta name="theme-color" content="#36d1dc" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <!-- Fill content with the URL of this portfolio you'll host -->
+    <meta property="og:url" content="https://devfolio.js.org/" />
+    <!-- Fill content with the title of your portfolio(Recommended to use what you put in <title> tag) -->
+    <meta property="og:title" content="[Your name here] | Developer" />
+    <!-- Give a short description that'll show up when you/someone shares your portfolio on different platform -->
+    <meta property="og:description" content="Made using DevFolio Template" />
+    <!-- Add a thumbnail image in assets folder and fill the content attr with URL to that thumbnail 
+      so that a thumbnail image of your portfolio is shown while shared on other platform -->
+    <meta
+      property="og:image"
+      content="https://devfolio.js.org/assets/devfolio.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <!-- Again fill content attr with the URL of this portfolio you'll host -->
+    <meta property="twitter:url" content="https://devfolio.js.org" />
+    <!-- Recommended to use the same text used within <title> element -->
+    <meta property="twitter:title" content="[Your name here] | Developer" />
+    <!-- short description that shows up while your portfolio is shared -->
+    <meta
+      property="twitter:description"
+      content="Made using DevFolio Template"
+    />
+    <!-- Fill content with the URL to the thumbnail image that you'll put in the assets folder -->
+    <meta
+      property="twitter:image"
+      content="https://anilseervi.vercel.app/assets/devfolio.png"
+    />
+
+    <!-- link tags -->
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="./javascript/scrollreveal.min.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="./javascript/scrollveal.js"
+    ></script>
+
+    <!-- Remove Google Analytics once you have your portfolio website set-up -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-122228201-4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-122228201-4");
+    </script>
+    <!-- End of Google Analytics -->
+  </head>
+  <body>
+
+    <section id="header">
+      <a href="#"><img src="./img/logo.png" class="logo" alt="" ></a>
+      <div>
+          <ul id="navbar">
+              <li><a  href="index.html">Home</a></li>
+              <!-- <li><a href="#hero">Shop</a></li> -->
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Project</a></li>
+              <li><a href="#skills">Skill</a></li>
+              <li><a href="#contact">Contact </a></li>
+             <a href="" id="close">X</a>
+          </ul>
+      </div> 
+      <div id="mobile">
+          <p id="bar"> <i class="fa fa-home"></i>  </p>
+          <!-- <i class="fa fa-linkedin">=</i> -->
+
+      </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- Hero Section -->
+    <div id="hero">
+      <section class="container">
+        <h1 class="hero-title">
+          Hi, my name is <span class="text-color-main name">Brajesh Lovanshi</span>
+          <br />
+          I'm the Java Backend Developer.
+        </h1>
+        <p class="hero-cta">
+          <a class="cta-btn cta-btn--hero" href="mailto:brajeshlovanshi2001@gmail.com">Get in touch</a>
+        </p>
+      </section>
+      
+      <a href="#about" class="scroll-down-link" aria-label="scroll-down">
+        <div class="scroll-down"></div
+      ></a>
+    </div>
+    <!-- /END Hero Section -->
+
+
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="row about-wrapper">
+          <div class="about-wrapper__image">
+            <img
+              class="img-fluid"
+              src="./assets/brajesh_lovanshi.jpg"
+              alt="Profile Image"
+            />
+          </div>
+          <div class="about-wrapper__info">
+            <p class="about-wrapper__info-text">
+              <!-- /*A passionate programmer with ability to learn quickly and implement and also versatile enough to learn and work in new environment Currently looking for an opportunity to work for an organization where I can contribute my skills and manage key projects that impact the organization, as well as broaden my scope of learning from the organization’s team members.
+
+              ★ A very Enthusiastic person who loves to do a job with perfection. I believe that the solution to real-world problems is modern technologies. Always interested in talking about Data Structures and algorithms.
+              
+              ★My personal interest lies in playing chess and traveling. Also, I love spending time to solving DSA problems on Leetcode.*/ -->
+              ★ A very Enthusiastic self-motivated and hard-working back-end developer with proficiency in Java.I believe that the solution to real-world problems is modern technologies. Always interested in talking about Data Structures and algorithms.
+              <br>
+              ★ Problem-solving mindset and hands-on
+              experience in developing 2 fully working collaborative projects. 
+            </p>
+            <p class="about-wrapper__info-text">
+              ★ To establish a long-term career in a company where I may utilize my Backend Developer professional skills and knowledge.
+            </p>
+            <span class="about-wrapper__cta">
+              <a 
+              target="_blank" href="https://drive.google.com/file/d/14zXjYVXChy1o8dSh3tGGKX32vVDER3P4/view?usp=sharing" class="cta-btn cta-btn--resume">View Resume</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END About Section -->
+
+
+    <!--Projects Section-->
+    <section id="projects">
+      <div class="container">
+        <div class="project-wrapper">
+          <h2 class="section-title dark-blue-text">Projects</h2>
+
+          <!-- Each .row is a project -->
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">mytheresa clone</h3>
+              <p class="project-wrapper__text-info">
+               This is the clone of mytheresa e-commerse website. mytheresa is the populor e-commerse shoping website.It is a goup project I lead the team and build this amazing website using HTML,CSS & Js. 
+              </p>
+              <div class="project-wrapper__text-btns">
+                <a
+                  href="https://animated-lily-d4a12b.netlify.app/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-btn cta-btn--hero cta-btn--projects"
+                  >See Live</a
+                >
+                <a href="https://github.com/br-lovanshi/mytheresa.com" target="_blank" class="cta-btn text-color-main"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+
+            <div class="project-wrapper__image">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/project1.png"
+                    class="img-fluid"
+                    alt="Project Image"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+          <!-- /END Project -->
+
+          <!-- Each .row is a project -->
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">pluralsight clone</h3>
+              <p class="project-wrapper__text-info">
+                pluralsight is the online course selling very populor website, It is  my one of the collaborative team project we build this clone website using HTML,CSS & JS.
+              </p>
+              <div class="project-wrapper__text-btns">
+                <a
+                  href="https://tangerine-medovik-117187.netlify.app/login.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-btn cta-btn--hero cta-btn--projects"
+                  >See Live</a
+                >
+                <a href="https://github.com/br-lovanshi/pluralsight.clone/tree/main" target="_blank" class="cta-btn text-color-main"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+
+            <div class="project-wrapper__image">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/project2.png"
+                    class="img-fluid"
+                    alt="Project Image"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+          <!-- /END Project -->
+
+          <!-- Each .row is a project -->
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">cara clone</h3>
+              <p class="project-wrapper__text-info">
+                This is my first clone project. it is e-commerse shopping website i build using HTML,CSS & JS.
+              </p>
+              <div class="project-wrapper__text-btns">
+                <a
+                  href="https://effulgent-selkie-80c5ff.netlify.app/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-btn cta-btn--hero cta-btn--projects"
+                  >See Live</a
+                >
+                <a href="https://github.com/br-lovanshi/cara-ecommerse" target="_blank" class="cta-btn text-color-main"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+
+            <div class="project-wrapper__image">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/Screenshot (1519).png"
+                    class="img-fluid"
+                    alt="Project Image"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+          <!-- /END Project -->
+        </div>
+      </div>
+    </section>
+    <!-- End Projects Section -->
+
+
+    
+<!-- skill section  -->
+
+<section id="skills">
+ 
+<div class="container">
+  <a href="#hero" class="back-to-top" aria-label="go back to top">
+    <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+
+    <h2 style="color: black;"> Tech Stack</h2> <br><br>
+
+  <div class="social-links">
+ 
+
+ <img width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" />
+          
+
+ <img width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg" />
+
+          
+ <img width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" />
+
+ <img width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" />
+          
+ <img width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+         
+ <img width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original-wordmark.svg" />
+ 
+          
+    <img width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg" />
+   
+    <img width = "50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" />
+           
+    
+   
+    
+          
+        
+          
+  </div>
+</a>
+  <!-- <hr /> -->
+  
+</div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <!-- <div class="container"> -->
+        <!-- <h2 class="section-title">Contact</h2> -->
+        <div class="contact-wrapper">
+          <p class="contact-wrapper__text">OK, LET’S CREATE
+            SOMETHING GREAT</p>
+          <a href="mailto:brajeshlovanshi2001@gmail.com" class="cta-btn cta-btn--resume"  
+          target="_blank" 
+          >Email   <i class="fa fa-envelope"></i></a>
+        <!-- </div> -->
+      </div>
+    </section>
+    <!-- END Contact Section -->
+
+<!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <a href="#hero" class="back-to-top" aria-label="go back to top">
+          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        </a>
+        <div class="social-links">
+          <a
+            href="mailto:brajeshlovanshi2001@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="twitter"
+          >
+            <!-- <i class="fa fa-inbox"></i>   --> 
+            <i class="fa fa-envelope"></i>
+          </a>
+          <!-- <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="instagram"
+          >
+            <i class="fa fa-instagram"></i>
+          </a>
+          <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="codepen"
+          >
+            <i class="fa fa-codepen"></i>
+          </a> -->
+          <a
+            href="https://www.linkedin.com/in/brajesh-lovanshi-2b274220a/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="linkedin"
+          >
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/br-lovanshi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="github"
+          >
+            <i class="fa fa-github"></i>
+          </a>
+        </div>
+        <hr />
+        <p class="footer__text">
+          &copy; <span id="year"></span> - Portfolio
+          <a
+            href="https://github.com/br-lovanshi"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Brajesh Lovanshi</a
+          >.
+        </p>
+      </div>
+    </footer>
+    <!-- END Footer Section -->
+
+
+
+ <link rel="stylesheet" href="./assets/spring.256x256.png">
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="./javascript/vanilla-tilt.min.js"></script>
+    <script type="text/javascript" src="./javascript/valtilt.js"></script>
+  </body>
+</html>
+<script src="script.js">
+   const bar = document.getElementById("bar");
+const nav = document.getElementById("navbar");
+const close = document.getElementById("close");
+
+
+if(bar){
+    bar.addEventListener("click", () => {
+        nav.classList.add("active")
+        console.log("click me")
+    })
+}
+if(close){
+    close.addEventListener("click", () => {
+        nav.classList.remove("active");
+    })
+}
+</script>
