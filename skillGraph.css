@@ -1,0 +1,66 @@
+#skillGraph {
+    margin-top: 55px;
+    padding-top: 234px;
+    padding-bottom: 396px;
+  
+    background:linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+    color: rgb(255, 255, 255);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
+  }
+  
+  .mainSkillGraph {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .progress {
+    margin: 25px 0;
+  }
+  .titleGraph {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+  }
+  .titleGraph h3 {
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+  .barline {
+    height: 12px;
+    background: #c8d6e5;
+    border-radius: 20px;
+  }
+  
+  .countbar {
+    
+    height: 12px;
+    background: rgb(49, 49, 49);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+  }
+  .countbar h3 {
+    position: absolute;
+    right: -19px;
+    top: -35px;
+    background: hsla(191, 80%, 83%, 0.39);
+    padding: 4px 6px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: 1px solid #36d1dc;
+  }
+  .countbar h3::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 11px;
+    height: 11px;
+    background: #34495e;
+    transform: rotate(45deg) translateX(-60%);
+  }
