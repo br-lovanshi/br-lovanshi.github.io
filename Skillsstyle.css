@@ -1,34 +1,4 @@
-:root {
-    /* --clr-background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
-    /* radial-gradient circle at 49% 46%,rgba(149,176,241,0.51), rgba(174, 192, 235, 0) 50%), radial-gradient(circle at 10% 10%,rgba(241, 189, 134, 0.758), rgba(240,173,103,0) 50%), radial-gradient(circle at 90% 10%,rgba(183, 150, 255, 0.631), rgba(184,150,255,0) 50%), radial-gradient(circle at 90% 90%,rgba(81, 136, 191, 0.69), rgba(47,168,178,0) 50%), radial-gradient(circle at 10% 90%,rgba(142, 106, 196, 0.5), rgba(168,112,253,0) 50%); */
-    /* --clr-line: rgba(255, 255, 255, 0.65);
-    --clr-text: rgba(0, 0, 0, 0.77); 
-    --clr-orange:linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%)
-    --clr-white: rgb(255, 255, 255);
-    --fontfp: 'Montserrat Alternates', sans-serif;
 
-    --value-percentage10: rotate(18deg);
-    --value-percentage20: rotate(36deg);
-    --value-percentage30: rotate(54deg);
-    --value-percentage40: rotate(72deg);
-    --value-percentage50: rotate(90deg);
-    --value-percentage60: rotate(108deg);
-    --value-percentage70: rotate(126deg);
-    --value-percentage80: rotate(144deg);
-    --value-percentage90: rotate(162deg);
-    --value-percentage100: rotate(180deg);
-    --to-deg:  */
-}
-
-/* * { margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-/* 
-html, body {
-  background-image: rgb(255, 255, 255);
-
-} */
 
 h2 {
   padding: 50px;

@@ -99,6 +99,7 @@ body{
 
 }
 #close{
+  cursor: pointer;
     display: none;
 }
 
@@ -157,7 +158,9 @@ body{
 
 }
 
-
+.Statistics{
+  width: 50%;
+}
 
 }
 
@@ -178,6 +181,10 @@ body{
     }
     #navbar li a {
         color: rgb(0, 117, 172);
+      }
+
+      .Statistics{
+        width: 50%;
       }
 } 
 
