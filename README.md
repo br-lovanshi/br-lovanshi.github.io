@@ -1,5 +1,5 @@
 # br-lovanshi.github.io
-[Visit](https://br-lovanshi.github.io/);
+[Veiw Portfolio](https://br-lovanshi.github.io/);
 
 <h1 align="center"> ⚡️ Brajesh Lovanshi ⚡️</h1>
 
