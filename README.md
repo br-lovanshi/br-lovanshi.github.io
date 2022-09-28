@@ -16,20 +16,24 @@
 - Payment page with total amount.
 ## Homepage
 
-![App Screenshot](https://i.postimg.cc/RhVQWt8q/tanner.png)
+![App Screenshot](./assets/Screenshot%20(1607).png)
 
-## Product page
+## About Me 
 
-![App Screenshot](https://i.postimg.cc/RSbcdWj1/Screenshot-327.png)
+![App Screenshot](./assets/Screenshot%20(1608).png)
 
-## Cart page
+## Skill page
 
-![App Screenshot](https://i.postimg.cc/nr4WYX76/Screenshot-328.png)
+![App Screenshot](./assets/Screenshot%20(1610).png)
 
-## Checkout page
+## Project page
 
-![App Screenshot](https://i.postimg.cc/q7s5n8mG/Screenshot-329.png)
+![App Screenshot](./assets/Screenshot%20(1611).png)
 
+
+## Contact page
+
+![App Screenshot](./assets/Screenshot%20(1613).png)
 
 
 
