@@ -3,8 +3,8 @@
     padding-top: 234px;
     padding-bottom: 396px;
   
-    background:linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
-    color: rgb(255, 255, 255);
+    /* color:linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%); */
+    color: black;
     height: 100vh;
     display: flex;
     align-items: center;
