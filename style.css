@@ -88,7 +88,8 @@ body{
     content: "";
     width: 50px;
     height: 3px;
-    background:  linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+    /* background:  linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%); */
+    background: linear-gradient(to bottom, #ff0000 0%, #ff9999 102%);
     bottom: -4px;
     left: 20px;
     position: absolute;
@@ -134,7 +135,7 @@ body{
           margin-bottom: 25px;
       }
       #navbar li a {
-        color: rgb(0, 117, 172);
+        color: rgb(207, 18, 18);
       } 
 #mobile {
     display: flex;
@@ -182,7 +183,7 @@ body{
         font-size: 37px;
     }
     #navbar li a {
-        color: rgb(0, 117, 172);
+      color: rgb(207, 18, 18);
       }
 
       .Statistics{

@@ -31,14 +31,14 @@
   }
   .barline {
     height: 12px;
-    background: #c8d6e5;
+    background: #e5c8c8;
     border-radius: 20px;
   }
   
   .countbar {
     
     height: 12px;
-    background: rgb(49, 49, 49);
+    background: rgb(141, 2, 2);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     position: relative;
@@ -47,12 +47,12 @@
     position: absolute;
     right: -19px;
     top: -35px;
-    background: hsla(191, 80%, 83%, 0.39);
+    background: hsla(0, 79%, 83%, 0.39);
     padding: 4px 6px;
     font-size: 16px;
     font-weight: 400;
     border-radius: 5px;
-    border: 1px solid #36d1dc;
+    border: 1px solid #dc3636;
   }
   .countbar h3::after {
     content: "";
@@ -61,6 +61,6 @@
     left: 50%;
     width: 11px;
     height: 11px;
-    background: #34495e;
+    background: #5e3434;
     transform: rotate(45deg) translateX(-60%);
   }
