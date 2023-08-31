@@ -1,7 +1,7 @@
 # br-lovanshi.github.io
 [Veiw Portfolio](https://br-lovanshi.github.io/);
 
-<h1 align="center"> ⚡️ Brajesh Lovanshi ⚡️</h1>
+<h1 align="center"> Brajesh Lovanshi </h1>
 
 <h2 align="center">
   <img src="assets/protfolio.gif" alt="Brajesh Lovanshi" width="1905px" />
@@ -35,12 +35,8 @@
 
 ![App Screenshot](./assets/Screenshot%20(1720).png)
 
-
-
 ## Support
 
 If you have any feedback, please reach out to me at brajeshlovanshi2001@gmail.com
-
-
 
 
