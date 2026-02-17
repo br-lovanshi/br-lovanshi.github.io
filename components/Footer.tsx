@@ -8,12 +8,16 @@ export default function Footer() {
                     <span className="text-muted-foreground text-sm block">
                         &copy; {new Date().getFullYear()} Brajesh Lovanshi.
                     </span>
-                    <span className="text-muted-foreground text-xs block mt-1">
-                        Powered by Next.js & Sanity.
-                    </span>
                 </div>
 
-                <div className="flex space-x-6">
+                <div className="flex items-center space-x-6">
+                    <a
+                        href="/brajesh_lovanshi_resume.pdf"
+                        download
+                        className="text-sm font-mono text-primary border border-primary/30 px-3 py-1 rounded hover:bg-primary/10 transition-colors"
+                    >
+                        Resume
+                    </a>
                     <a
                         href="https://github.com/br-lovanshi"
                         target="_blank"
@@ -33,7 +37,7 @@ export default function Footer() {
                         <Linkedin size={18} />
                     </a>
                     <a
-                        href="mailto:contact@br-lovanshi.com"
+                        href="mailto:learning.brajeshlovanshi@gmail.com"
                         className="text-muted-foreground hover:text-primary transition-colors"
                         aria-label="Email"
                     >

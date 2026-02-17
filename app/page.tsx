@@ -39,6 +39,13 @@ export default async function Home() {
             <Link href="/about" className="text-primary hover:underline underline-offset-4 decoration-primary/30">
               Read more →
             </Link>
+            <a
+              href="/brajesh_lovanshi_resume.pdf"
+              download
+              className="text-muted-foreground hover:text-primary hover:underline underline-offset-4 decoration-primary/30 ml-6"
+            >
+              Download Resume ↓
+            </a>
           </div>
         </div>
       </section>
