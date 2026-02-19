@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { client } from "@/lib/sanity.client";
 import { postsQuery } from "@/lib/queries";
-
-// Revalidate every 60 seconds
-// export const revalidate = 60;
+import { ArrowUpRight, BookOpen } from "lucide-react";
 
 export const metadata = {
     title: "Blog | Brajesh Lovanshi",
@@ -14,36 +12,73 @@ export default async function BlogPage() {
     const posts = await client.fetch(postsQuery);
 
     return (
-        <div className="space-y-8">
-            <div className="border-b border-border pb-8">
-                <h1 className="text-3xl font-bold font-mono text-primary mb-4">Blog</h1>
+        <div className="space-y-10">
+            {/* Header */}
+            <div className="border-b pb-8" style={{ borderColor: "var(--border)" }}>
+                <div className="flex items-center gap-2.5 mb-3">
+                    <BookOpen size={24} style={{ color: "var(--indigo)" }} />
+                    <h1 className="text-3xl font-bold text-primary">Blog</h1>
+                </div>
                 <p className="text-muted-foreground text-lg max-w-2xl">
                     Thoughts on software architecture, distributed systems, and engineering leadership.
                 </p>
             </div>
 
-            <div className="space-y-8">
+            {/* Posts Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {posts.length > 0 ? (
                     posts.map((post: any) => (
-                        <article key={post.slug} className="group flex flex-col items-start gap-2">
-                            <Link href={`/blog/${post.slug}`} className="block w-full">
-                                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
-                                    <h2 className="text-xl font-bold text-primary group-hover:underline underline-offset-4 decoration-primary/30 transition-colors">
-                                        {post.title}
-                                    </h2>
-                                    <time className="text-sm font-mono text-muted-foreground shrink-0">
+                        <Link
+                            key={post.slug}
+                            href={`/blog/${post.slug}`}
+                            className="card group block p-6"
+                        >
+                            <div className="relative z-10">
+                                {/* Category + Date */}
+                                <div className="flex items-center gap-2 mb-4 flex-wrap">
+                                    {post.categories?.slice(0, 2).map((cat: string) => (
+                                        <span
+                                            key={cat}
+                                            className="text-xs font-mono font-semibold px-2.5 py-1 rounded-full"
+                                            style={{ background: "var(--indigo-muted)", color: "var(--indigo)" }}
+                                        >
+                                            {cat}
+                                        </span>
+                                    ))}
+                                    <time className="text-xs font-mono text-muted-foreground ml-auto">
                                         {new Date(post.publishedAt).toLocaleDateString("en-US", {
                                             year: "numeric",
-                                            month: "long",
+                                            month: "short",
                                             day: "numeric",
                                         })}
                                     </time>
                                 </div>
-                            </Link>
-                        </article>
+
+                                {/* Title */}
+                                <h2
+                                    className="text-lg font-bold text-primary mb-2 line-clamp-2 transition-colors"
+                                    style={{ transitionProperty: "color" }}
+                                >
+                                    <span className="group-hover:underline underline-offset-4" style={{ textDecorationColor: "var(--indigo)" }}>
+                                        {post.title}
+                                    </span>
+                                </h2>
+
+                                {/* Author */}
+                                {post.author && (
+                                    <p className="text-xs text-muted-foreground">by {post.author}</p>
+                                )}
+                            </div>
+
+                            <ArrowUpRight
+                                size={16}
+                                className="absolute bottom-5 right-5 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                                style={{ color: undefined, position: "absolute" }}
+                            />
+                        </Link>
                     ))
                 ) : (
-                    <p className="text-muted-foreground italic">No posts found yet.</p>
+                    <p className="text-muted-foreground italic col-span-2">No posts found yet.</p>
                 )}
             </div>
         </div>

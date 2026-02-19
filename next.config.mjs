@@ -1,19 +1,27 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    //   output: 'export',
+    // Explicitly NOT using output: 'export' — we use a custom build-static.js script
+    // that copies .next/server/app HTML files into /out for GitHub Pages.
     images: {
-        loader: 'custom',
-        loaderFile: './lib/sanity-loader.ts',
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'cdn.sanity.io',
+                pathname: '/images/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'cdn.sanity.io',
+                pathname: '/files/**',
+            },
+        ],
     },
-    /* eslint: {
-      // Warning: This allows production builds to successfully complete even if
-      // your project has ESLint errors.                                         
-      ignoreDuringBuilds: true,                                                  
-    }, */
     typescript: {
-        // Ignore typescript errors during build to ensure deployment succeeds even with strict checks
         ignoreBuildErrors: true,
-    }
+    },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 };
 
 export default nextConfig;

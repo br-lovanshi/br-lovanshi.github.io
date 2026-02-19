@@ -13,51 +13,66 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-indigo: var(--indigo);
+  --color-indigo-muted: var(--indigo-muted);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-  /* Use specific mono font */
 }
 
-/* Base Theme (Light Mode Default) */
+/* ── Light Mode ──────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #222222;
-  /* High contrast text */
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --border: #e4e4e7;
-  --input: #e4e4e7;
-  --primary: #18181b;
-  /* Dark button in light mode */
-  --primary-foreground: #fafafa;
-  --secondary: #f4f4f5;
-  --secondary-foreground: #18181b;
-  --accent: #f4f4f5;
-  --accent-foreground: #18181b;
+  --background: #f8f8fc;
+  --foreground: #0f0f13;
+  --muted: #f0f0f6;
+  --muted-foreground: #6b7280;
+  --border: #e2e2ec;
+  --input: #e2e2ec;
+  --primary: #0f0f13;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f0f6;
+  --secondary-foreground: #0f0f13;
+  --accent: #f0f0f6;
+  --accent-foreground: #0f0f13;
 
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* Pink/Magenta accent */
+  --indigo: #c70f8d;
+  --indigo-muted: #fceef8;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(99, 102, 241, 0.12);
 }
 
-/* Dark Mode Override */
+/* ── Dark Mode ───────────────────────────────────── */
 [data-theme="dark"] {
-  --background: #111111;
-  /* Hugo Narrow dark bg */
-  --foreground: #eeeeee;
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
-  --border: #27272a;
-  --input: #27272a;
-  --primary: #fafafa;
-  --primary-foreground: #18181b;
-  --secondary: #27272a;
-  --secondary-foreground: #fafafa;
-  --accent: #27272a;
-  --accent-foreground: #fafafa;
+  --background: #0c0c10;
+  --foreground: #f0f0f8;
+  --muted: #1a1a24;
+  --muted-foreground: #8b8b9f;
+  --border: #2a2a38;
+  --input: #2a2a38;
+  --primary: #f0f0f8;
+  --primary-foreground: #0c0c10;
+  --secondary: #1a1a24;
+  --secondary-foreground: #f0f0f8;
+  --accent: #1a1a24;
+  --accent-foreground: #f0f0f8;
+
+  --indigo: #e040a9;
+  --indigo-muted: #2d0820;
+
+  --glass-bg: rgba(20, 20, 32, 0.72);
+  --glass-border: rgba(129, 140, 248, 0.15);
 }
 
+/* ── Base ────────────────────────────────────────── */
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--font-sans, "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -66,17 +81,113 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-mono);
-  /* Hugo Narrow header style */
-  font-weight: 700;
+  font-family: var(--font-sans, "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif);
+  font-weight: 800;
   letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
-code {
-  font-family: var(--font-mono);
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono, "JetBrains Mono", ui-monospace, monospace);
+  font-size: 0.875em;
 }
 
 ::selection {
-  background-color: var(--foreground);
-  color: var(--background);
+  background-color: var(--indigo);
+  color: #ffffff;
+}
+
+/* ── Glassmorphism ───────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+}
+
+/* ── Buttons ─────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: var(--indigo);
+  color: #ffffff;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 0 0 var(--indigo);
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -4px rgba(199, 15, 141, 0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1.5px solid var(--border);
+  color: var(--foreground);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--indigo);
+  color: var(--indigo);
+  background: var(--indigo-muted);
+  transform: translateY(-1px);
+}
+
+/* ── Card ────────────────────────────────────────── */
+.card {
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  background: var(--background);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--indigo-muted) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--indigo);
+  box-shadow: 0 8px 32px -8px rgba(199, 15, 141, 0.2);
+  transform: translateY(-3px);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ── Indigo glow dot (decorative) ────────────────── */
+.accent-dot::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--indigo);
+  margin-right: 0.5rem;
+  box-shadow: 0 0 6px var(--indigo);
 }
