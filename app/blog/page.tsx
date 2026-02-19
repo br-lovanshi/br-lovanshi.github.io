@@ -16,7 +16,7 @@ export default async function BlogPage() {
     return (
         <div className="space-y-8">
             <div className="border-b border-border pb-8">
-                <h1 className="text-3xl font-bold font-mono text-primary mb-4">Blog</h1>
+                <h1 className="text-3xl font-bold text-primary mb-4">Blog</h1>
                 <p className="text-muted-foreground text-lg max-w-2xl">
                     Thoughts on software architecture, distributed systems, and engineering leadership.
                 </p>

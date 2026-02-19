@@ -13,34 +13,29 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-  /* Use specific mono font */
 }
 
 /* Base Theme (Light Mode Default) */
 :root {
   --background: #ffffff;
-  --foreground: #222222;
-  /* High contrast text */
+  --foreground: #1a1a1a;
   --muted: #f4f4f5;
   --muted-foreground: #71717a;
   --border: #e4e4e7;
   --input: #e4e4e7;
   --primary: #18181b;
-  /* Dark button in light mode */
   --primary-foreground: #fafafa;
   --secondary: #f4f4f5;
   --secondary-foreground: #18181b;
   --accent: #f4f4f5;
   --accent-foreground: #18181b;
-
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* Dark Mode Override */
 [data-theme="dark"] {
   --background: #111111;
-  /* Hugo Narrow dark bg */
   --foreground: #eeeeee;
   --muted: #27272a;
   --muted-foreground: #a1a1aa;
@@ -57,7 +52,10 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--font-sans, "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -66,14 +64,18 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-mono);
-  /* Hugo Narrow header style */
+  font-family: var(--font-sans, "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif);
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
-code {
-  font-family: var(--font-mono);
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono, "JetBrains Mono", ui-monospace, "Cascadia Code", monospace);
+  font-size: 0.875em;
 }
 
 ::selection {

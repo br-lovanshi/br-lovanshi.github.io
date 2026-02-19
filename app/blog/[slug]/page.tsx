@@ -65,9 +65,9 @@ const components: PortableTextComponents = {
         }
     },
     block: {
-        h1: ({ children }) => <h1 className="text-3xl font-bold mt-12 mb-4 font-mono">{children}</h1>,
-        h2: ({ children }) => <h2 className="text-2xl font-bold mt-10 mb-4 font-mono">{children}</h2>,
-        h3: ({ children }) => <h3 className="text-xl font-bold mt-8 mb-4 font-mono">{children}</h3>,
+        h1: ({ children }) => <h1 className="text-3xl font-bold mt-12 mb-4">{children}</h1>,
+        h2: ({ children }) => <h2 className="text-2xl font-bold mt-10 mb-4">{children}</h2>,
+        h3: ({ children }) => <h3 className="text-xl font-bold mt-8 mb-4">{children}</h3>,
         blockquote: ({ children }) => (
             <blockquote className="border-l-4 border-primary pl-4 italic my-6 text-muted-foreground">
                 {children}
@@ -102,7 +102,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </Link>
 
             <header className="mb-12 border-b border-border pb-8">
-                <h1 className="text-3xl md:text-4xl font-bold mb-4 font-mono text-primary leading-tight">
+                <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary leading-tight">
                     {post.title}
                 </h1>
                 <div className="flex items-center gap-4 text-sm text-muted-foreground font-mono">
@@ -122,7 +122,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
             </header>
 
-            <div className="prose prose-zinc dark:prose-invert max-w-none prose-headings:font-mono prose-a:text-primary prose-a:no-underline hover:prose-a:underline font-sans">
+            <div className="prose prose-zinc dark:prose-invert max-w-none prose-a:text-primary prose-a:no-underline hover:prose-a:underline font-sans">
                 <PortableText value={post.body} components={components} />
             </div>
         </article>

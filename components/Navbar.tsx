@@ -22,7 +22,7 @@ export default function Navbar() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
-                    <Link href="/" className="text-xl font-bold tracking-tight hover:text-primary transition-colors font-mono">
+                    <Link href="/" className="text-xl font-bold tracking-tight hover:text-primary transition-colors">
                         Brajesh Lovanshi
                     </Link>
 

@@ -46,9 +46,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 const components: PortableTextComponents = {
     block: {
-        h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-primary font-mono">{children}</h1>,
-        h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4 text-primary font-mono">{children}</h2>,
-        h3: ({ children }) => <h3 className="text-xl font-bold mt-6 mb-3 text-primary font-mono">{children}</h3>,
+        h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4 text-primary">{children}</h1>,
+        h2: ({ children }) => <h2 className="text-2xl font-bold mt-8 mb-4 text-primary">{children}</h2>,
+        h3: ({ children }) => <h3 className="text-xl font-bold mt-6 mb-3 text-primary">{children}</h3>,
         normal: ({ children }) => <p className="mb-4 leading-relaxed text-muted-foreground">{children}</p>,
         blockquote: ({ children }) => <blockquote className="border-l-4 border-primary pl-4 italic my-4 text-muted-foreground">{children}</blockquote>,
     },
@@ -85,7 +85,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </Link>
 
             <header className="mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 font-mono text-primary">{project.title}</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">{project.title}</h1>
                 <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">{project.tagline}</p>
 
                 <div className="flex flex-wrap gap-4 mb-8">
@@ -130,7 +130,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <div className="md:col-span-2 space-y-12">
                     {project.problem && (
                         <section>
-                            <h2 className="text-2xl font-bold mb-4 font-mono text-primary">The Problem</h2>
+                            <h2 className="text-2xl font-bold mb-4 text-primary">The Problem</h2>
                             <div className="prose prose-zinc dark:prose-invert max-w-none text-muted-foreground">
                                 {Array.isArray(project.problem)
                                     ? <PortableText value={project.problem} components={components} />
@@ -141,7 +141,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
                     {project.solution && (
                         <section>
-                            <h2 className="text-2xl font-bold mb-4 font-mono text-primary">The Solution</h2>
+                            <h2 className="text-2xl font-bold mb-4 text-primary">The Solution</h2>
                             <div className="prose prose-zinc dark:prose-invert max-w-none text-muted-foreground">
                                 {Array.isArray(project.solution)
                                     ? <PortableText value={project.solution} components={components} />
@@ -152,8 +152,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
                     {project.architecture && (
                         <section>
-                            <h2 className="text-2xl font-bold mb-4 font-mono text-primary">Architecture & Key Features</h2>
-                            <div className="prose prose-zinc dark:prose-invert max-w-none prose-headings:font-mono prose-a:text-primary">
+                            <h2 className="text-2xl font-bold mb-4 text-primary">Architecture & Key Features</h2>
+                            <div className="prose prose-zinc dark:prose-invert max-w-none prose-a:text-primary">
                                 <PortableText value={project.architecture} components={components} />
                             </div>
                         </section>
@@ -163,7 +163,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <aside className="space-y-8">
                     {project.techStack && (
                         <div className="bg-muted/30 p-6 rounded-lg border border-border">
-                            <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-4 font-mono">Tech Stack</h3>
+                            <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-4">Tech Stack</h3>
                             <div className="flex flex-wrap gap-2">
                                 {project.techStack.map((tech: string) => (
                                     <span key={tech} className="text-xs font-mono text-primary bg-background border border-border px-2 py-1 rounded">
@@ -176,7 +176,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
                     {project.impact && (
                         <div className="bg-muted/30 p-6 rounded-lg border border-border">
-                            <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-4 font-mono">Key Impact</h3>
+                            <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-4">Key Impact</h3>
                             <ul className="space-y-3">
                                 {project.impact.map((item: string, i: number) => (
                                     <li key={i} className="text-sm text-muted-foreground flex items-start gap-3">

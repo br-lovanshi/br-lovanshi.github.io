@@ -24,7 +24,7 @@ export default async function Home() {
     <div className="space-y-16">
       {/* Hero Section */}
       <section className="py-8 md:py-12">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6 font-mono tracking-tight text-primary">
+        <h1 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight text-primary">
           Brajesh Lovanshi
         </h1>
         <div className="max-w-2xl space-y-4 text-muted-foreground leading-relaxed">
@@ -53,7 +53,7 @@ export default async function Home() {
       {/* Recent Posts - Hugo Narrow Style: Date | Title */}
       <section>
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-xl font-bold font-mono text-primary flex items-center gap-2">
+          <h2 className="text-xl font-bold text-primary flex items-center gap-2">
             Recent Posts
           </h2>
           <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary hover:underline underline-offset-4">
@@ -86,7 +86,7 @@ export default async function Home() {
       {/* Selected Projects */}
       <section>
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-xl font-bold font-mono text-primary">
+          <h2 className="text-xl font-bold text-primary">
             Selected Projects
           </h2>
           <Link href="/projects" className="text-sm text-muted-foreground hover:text-primary hover:underline underline-offset-4">

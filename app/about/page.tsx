@@ -47,8 +47,8 @@ export default async function AboutPage() {
 
                     <div className="flex flex-col gap-4">
                         <div>
-                            <h1 className="text-2xl font-bold font-mono text-primary">{author.name}</h1>
-                            <p className="text-muted-foreground font-mono text-sm">Systems Architect</p>
+                            <h1 className="text-2xl font-bold text-primary">{author.name}</h1>
+                            <p className="text-muted-foreground text-sm">Systems Architect</p>
                         </div>
 
                         <div className="flex gap-4">
@@ -80,14 +80,14 @@ export default async function AboutPage() {
 
                 {/* Main Content */}
                 <div className="w-full md:w-2/3">
-                    <section className="prose prose-zinc dark:prose-invert max-w-none prose-headings:font-mono prose-a:text-primary">
-                        <h2 className="text-2xl font-bold text-primary mb-6 font-mono border-b border-border pb-2">About Me</h2>
+                    <section className="prose prose-zinc dark:prose-invert max-w-none prose-a:text-primary">
+                        <h2 className="text-2xl font-bold text-primary mb-6 border-b border-border pb-2">About Me</h2>
                         <PortableText
                             value={author.bio}
                             components={{
                                 block: {
                                     normal: ({ children }) => <p className="mb-4 leading-relaxed text-foreground/90">{children}</p>,
-                                    h2: ({ children }) => <h2 className="text-xl font-bold mt-8 mb-4 font-mono">{children}</h2>,
+                                    h2: ({ children }) => <h2 className="text-xl font-bold mt-8 mb-4">{children}</h2>,
                                 },
                                 list: {
                                     bullet: ({ children }) => <ul className="list-disc pl-5 mb-4 space-y-2">{children}</ul>,
@@ -97,7 +97,7 @@ export default async function AboutPage() {
                     </section>
 
                     <section className="mt-12">
-                        <h2 className="text-2xl font-bold text-primary mb-6 font-mono border-b border-border pb-2">
+                        <h2 className="text-2xl font-bold text-primary mb-6 border-b border-border pb-2">
                             Core Competencies
                         </h2>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">

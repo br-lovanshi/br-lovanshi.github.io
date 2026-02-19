@@ -17,7 +17,7 @@ export default async function WorkPage() {
     return (
         <div className="space-y-8">
             <div className="border-b border-border pb-8">
-                <h1 className="text-3xl font-bold font-mono text-primary mb-4">Work</h1>
+                <h1 className="text-3xl font-bold text-primary mb-4">Work</h1>
                 <p className="text-muted-foreground text-lg max-w-2xl">
                     A timeline of the companies I&apos;ve worked at and the roles I&apos;ve held.
                 </p>
