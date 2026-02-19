@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, BookOpen, Layers } from "lucide-react";
 import { client } from "@/lib/sanity.client";
-import { projectsQuery, postsQuery } from "@/lib/queries";
+import { projectsQuery, postsQuery, authorQuery } from "@/lib/queries";
 
 export const revalidate = 60;
 
@@ -11,11 +11,13 @@ async function getRecentPosts() {
 }
 
 export default async function Home() {
-  const [allProjects, posts] = await Promise.all([
+  const [allProjects, posts, author] = await Promise.all([
     client.fetch(projectsQuery),
     getRecentPosts(),
+    client.fetch(authorQuery),
   ]);
   const projects = allProjects.slice(0, 4);
+  const resumeURL: string | null = author?.resumeURL ?? null;
 
   return (
     <div className="space-y-20">
@@ -42,12 +44,14 @@ export default async function Home() {
             I build reliable, scalable distributed systems. Passionate about backend architecture, cloud infrastructure, and simplifying complexity.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/about" className="btn-primary">
+            <a href="/about" className="btn-primary">
               About Me <ArrowRight size={16} />
-            </Link>
-            <a href="/brajesh_lovanshi_resume.pdf" download className="btn-secondary">
-              Download Resume
             </a>
+            {resumeURL && (
+              <a href={resumeURL} target="_blank" rel="noopener noreferrer" download="Brajesh_Lovanshi_Resume.pdf" className="btn-secondary">
+                Download Resume
+              </a>
+            )}
           </div>
         </div>
       </section>

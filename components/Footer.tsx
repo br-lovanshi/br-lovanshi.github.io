@@ -1,6 +1,11 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { client } from "@/lib/sanity.client";
+import { authorQuery } from "@/lib/queries";
 
-export default function Footer() {
+export default async function Footer() {
+    const author = await client.fetch(authorQuery);
+    const resumeURL: string | null = author?.resumeURL ?? null;
+
     return (
         <footer className="mt-auto" style={{ borderTop: "1px solid var(--border)" }}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl py-6 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -11,13 +16,17 @@ export default function Footer() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                    <a
-                        href="/brajesh_lovanshi_resume.pdf"
-                        download
-                        className="btn-secondary text-xs px-3 py-1.5"
-                    >
-                        Resume
-                    </a>
+                    {resumeURL && (
+                        <a
+                            href={resumeURL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            download="Brajesh_Lovanshi_Resume.pdf"
+                            className="btn-secondary text-xs px-3 py-1.5"
+                        >
+                            Resume
+                        </a>
+                    )}
                     <a
                         href="https://github.com/br-lovanshi"
                         target="_blank"

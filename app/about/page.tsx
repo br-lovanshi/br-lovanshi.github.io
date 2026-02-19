@@ -86,13 +86,17 @@ export default async function AboutPage() {
                             ))}
                         </div>
 
-                        <a
-                            href="/brajesh_lovanshi_resume.pdf"
-                            download="Brajesh_Lovanshi_Resume.pdf"
-                            className="btn-primary w-full justify-center relative z-10"
-                        >
-                            <Download size={15} /> Download Resume
-                        </a>
+                        {author.resumeURL && (
+                            <a
+                                href={author.resumeURL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                download="Brajesh_Lovanshi_Resume.pdf"
+                                className="btn-primary w-full justify-center relative z-10"
+                            >
+                                <Download size={15} /> Download Resume
+                            </a>
+                        )}
                     </div>
                 </div>
 
