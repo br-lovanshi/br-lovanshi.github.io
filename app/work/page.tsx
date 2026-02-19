@@ -1,23 +1,27 @@
-import Link from "next/link";
 import { client } from "@/lib/sanity.client";
 import { jobsQuery } from "@/lib/queries";
 import { PortableText } from "next-sanity";
-import { Calendar, Briefcase, ArrowLeft } from "lucide-react";
+import { Calendar } from "lucide-react";
 import Image from "next/image";
 
 export const revalidate = 60;
+
+export const metadata = {
+    title: "Work | Brajesh Lovanshi",
+    description: "My professional work history and experience.",
+};
 
 export default async function WorkPage() {
     const jobs = await client.fetch(jobsQuery);
 
     return (
-        <div className="max-w-4xl mx-auto py-12 px-6">
-            <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">
-                <ArrowLeft size={16} className="mr-2" />
-                Back to Home
-            </Link>
-
-            <h1 className="text-3xl md:text-4xl font-bold font-mono text-primary mb-12">Work History</h1>
+        <div className="space-y-8">
+            <div className="border-b border-border pb-8">
+                <h1 className="text-3xl font-bold font-mono text-primary mb-4">Work</h1>
+                <p className="text-muted-foreground text-lg max-w-2xl">
+                    A timeline of the companies I&apos;ve worked at and the roles I&apos;ve held.
+                </p>
+            </div>
 
             <div className="relative border-l border-border ml-3 md:ml-6 space-y-12">
                 {jobs.length > 0 ? (
@@ -38,37 +42,54 @@ export default async function WorkPage() {
                                         {job.company}
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-2 text-muted-foreground font-mono text-xs whitespace-nowrap bg-secondary px-2 py-1 rounded">
+                                <div className="flex items-center gap-2 text-muted-foreground font-mono text-xs whitespace-nowrap bg-secondary px-2 py-1 rounded self-start">
                                     <Calendar size={12} />
-                                    {new Date(job.startDate).getFullYear()} - {job.endDate ? new Date(job.endDate).getFullYear() : "Present"}
+                                    {new Date(job.startDate).getFullYear()} – {job.endDate ? new Date(job.endDate).getFullYear() : "Present"}
                                 </div>
                             </div>
 
-                            <div className="prose prose-zinc dark:prose-invert prose-sm max-w-none text-muted-foreground mb-4">
-                                <PortableText
-                                    value={job.description}
-                                    components={{
-                                        block: {
-                                            normal: ({ children }) => <p className="mb-2 leading-relaxed">{children}</p>,
-                                        },
-                                        list: {
-                                            bullet: ({ children }) => <ul className="list-disc pl-5 space-y-1">{children}</ul>,
-                                        }
-                                    }}
-                                />
-                            </div>
+                            {job.description && (
+                                <div className="prose prose-zinc dark:prose-invert prose-sm max-w-none text-muted-foreground mb-4">
+                                    <PortableText
+                                        value={job.description}
+                                        components={{
+                                            block: {
+                                                normal: ({ children }) => <p className="mb-2 leading-relaxed">{children}</p>,
+                                            },
+                                            list: {
+                                                bullet: ({ children }) => <ul className="list-disc pl-5 space-y-1">{children}</ul>,
+                                            },
+                                        }}
+                                    />
+                                </div>
+                            )}
 
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {job.technologies?.map((tech: string) => (
-                                    <span key={tech} className="text-xs font-mono text-muted-foreground border border-border px-2 py-0.5 rounded">
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
+                            {job.impact && job.impact.length > 0 && (
+                                <ul className="space-y-1.5 mb-4">
+                                    {job.impact.map((item: string, i: number) => (
+                                        <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                                            <span className="text-primary mt-0.5 shrink-0">▹</span>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+
+                            {job.technologies && job.technologies.length > 0 && (
+                                <div className="flex flex-wrap gap-2">
+                                    {job.technologies.map((tech: string) => (
+                                        <span key={tech} className="text-xs font-mono text-muted-foreground border border-border px-2 py-0.5 rounded bg-secondary/50">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     ))
                 ) : (
-                    <p className="pl-8 text-muted-foreground italic">No work experience found. Add jobs in Sanity Studio.</p>
+                    <p className="pl-8 text-muted-foreground italic">
+                        No work experience found. Add jobs in Sanity Studio.
+                    </p>
                 )}
             </div>
         </div>

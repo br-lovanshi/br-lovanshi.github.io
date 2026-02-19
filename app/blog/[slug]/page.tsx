@@ -12,14 +12,21 @@ export async function generateStaticParams() {
             console.error("Sanity fetch returned non-array:", posts);
             return [];
         }
-        return posts.map((post: any) => ({
-            slug: post.slug,
-        }));
+        return posts
+            .map((post: any) => {
+                const slug =
+                    typeof post.slug === "string"
+                        ? post.slug
+                        : post.slug?.current;
+                return slug ? { slug } : null;
+            })
+            .filter(Boolean);
     } catch (error) {
         console.error("Error generating static params for blog:", error);
         return [];
     }
 }
+
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug;

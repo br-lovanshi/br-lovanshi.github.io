@@ -68,16 +68,13 @@ export default async function AboutPage() {
                             ))}
                         </div>
 
-                        {author.resumeURL && (
-                            <a
-                                href={author.resumeURL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 px-6 py-3 border border-primary text-primary rounded-md font-mono text-sm hover:bg-primary/5 transition-colors"
-                            >
-                                <Download size={16} /> Resume
-                            </a>
-                        )}
+                        <a
+                            href="/brajesh_lovanshi_resume.pdf"
+                            download="Brajesh_Lovanshi_Resume.pdf"
+                            className="flex items-center justify-center gap-2 px-6 py-3 border border-primary text-primary rounded-md font-mono text-sm hover:bg-primary/5 transition-colors"
+                        >
+                            <Download size={16} /> Resume
+                        </a>
                     </div>
                 </div>
 

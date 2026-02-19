@@ -8,6 +8,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
     { name: "About", href: "/about" },
+    { name: "Work", href: "/work" },
     { name: "Projects", href: "/projects" },
     { name: "Blog", href: "/blog" },
 ];
@@ -80,8 +81,8 @@ export default function Navbar() {
                                     href={item.href}
                                     onClick={() => setIsOpen(false)}
                                     className={`block px-3 py-2 rounded-md text-base font-medium ${isActive
-                                            ? "bg-muted text-primary"
-                                            : "text-muted-foreground hover:bg-muted hover:text-primary"
+                                        ? "bg-muted text-primary"
+                                        : "text-muted-foreground hover:bg-muted hover:text-primary"
                                         }`}
                                 >
                                     {item.name}

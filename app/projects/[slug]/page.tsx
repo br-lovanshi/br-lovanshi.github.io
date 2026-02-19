@@ -10,14 +10,23 @@ import { Github, ExternalLink, ArrowLeft } from "lucide-react";
 export async function generateStaticParams() {
     try {
         const projects = await client.fetch(projectsQuery);
-        return projects.map((project: any) => ({
-            slug: project.slug,
-        }));
+        return projects
+            .map((project: any) => {
+                // Sanity can return slug as a string ("slug": slug.current)
+                // or as an object ({ _type: "slug", current: "..." }) — handle both
+                const slug =
+                    typeof project.slug === "string"
+                        ? project.slug
+                        : project.slug?.current;
+                return slug ? { slug } : null;
+            })
+            .filter(Boolean);
     } catch (error) {
         console.error("Error generating static params for projects:", error);
         return [];
     }
 }
+
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
     const slug = (await params).slug;
@@ -122,14 +131,22 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     {project.problem && (
                         <section>
                             <h2 className="text-2xl font-bold mb-4 font-mono text-primary">The Problem</h2>
-                            <p className="text-muted-foreground leading-relaxed">{project.problem}</p>
+                            <div className="prose prose-zinc dark:prose-invert max-w-none text-muted-foreground">
+                                {Array.isArray(project.problem)
+                                    ? <PortableText value={project.problem} components={components} />
+                                    : <p className="leading-relaxed">{project.problem}</p>}
+                            </div>
                         </section>
                     )}
 
                     {project.solution && (
                         <section>
                             <h2 className="text-2xl font-bold mb-4 font-mono text-primary">The Solution</h2>
-                            <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
+                            <div className="prose prose-zinc dark:prose-invert max-w-none text-muted-foreground">
+                                {Array.isArray(project.solution)
+                                    ? <PortableText value={project.solution} components={components} />
+                                    : <p className="leading-relaxed">{project.solution}</p>}
+                            </div>
                         </section>
                     )}
 
