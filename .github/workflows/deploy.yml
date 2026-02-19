@@ -46,16 +46,19 @@ jobs:
         env:
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
-          # Prevent Next.js from auto-enabling output:export on github.io runners
           GITHUB_PAGES: false
           NODE_ENV: production
 
       - name: Upload artifact
+        # Only upload (and deploy) from main branch
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
   deploy:
+    # Only runs when build succeeds AND we're on main
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
