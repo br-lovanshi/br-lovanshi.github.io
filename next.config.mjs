@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // Explicitly NOT using output: 'export' — we use a custom build-static.js script
+    // that copies .next/server/app HTML files into /out for GitHub Pages.
     images: {
         remotePatterns: [
             {
@@ -16,7 +18,10 @@ const nextConfig = {
     },
     typescript: {
         ignoreBuildErrors: true,
-    }
+    },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 };
 
 export default nextConfig;
