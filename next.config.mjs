@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Explicitly NOT using output: 'export' — we use a custom build-static.js script
-    // that copies .next/server/app HTML files into /out for GitHub Pages.
     images: {
+        // Required for static GitHub Pages — no server to run /_next/image optimization
+        unoptimized: true,
         remotePatterns: [
             {
                 protocol: 'https',
