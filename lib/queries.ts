@@ -10,7 +10,9 @@ export const authorQuery = groq`
     shortBio,
     competencies,
     socials,
-    "resumeURL": resume.asset->url
+    "resumeURL": resume.asset->url,
+    lookingFor,
+    workTypes
   }
 `
 

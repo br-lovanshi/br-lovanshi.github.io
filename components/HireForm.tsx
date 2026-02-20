@@ -5,15 +5,16 @@ import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-const WORK_TYPES = [
-    { value: "", label: "Select type of work…" },
-    { value: "Full-time Job", label: "💼 Full-time / Contract Role" },
-    { value: "Freelance", label: "🚀 Freelance Project" },
-    { value: "Consultation", label: "🧠 Technical Consultation" },
-    { value: "Other", label: "✉️ Other / Just saying hi" },
-];
+interface WorkType {
+    label: string;
+    value: string;
+}
 
-export default function HireForm() {
+interface HireFormProps {
+    workTypes: WorkType[];
+}
+
+export default function HireForm({ workTypes }: HireFormProps) {
     const [status, setStatus] = useState<Status>("idle");
     const [errorMsg, setErrorMsg] = useState("");
     const [cooldown, setCooldown] = useState(0);
@@ -41,6 +42,18 @@ export default function HireForm() {
 
         // Honeypot check (client-side redundancy)
         if (data.get("botcheck")) return;
+
+        // Manual validation fallback
+        const name = (data.get("name") as string || "").trim();
+        const email = (data.get("email") as string || "").trim();
+        const workType = (data.get("work_type") as string || "").trim();
+        const message = (data.get("message") as string || "").trim();
+
+        if (!name || !email || !workType || !message) {
+            setStatus("error");
+            setErrorMsg("Please fill in all fields before submitting.");
+            return;
+        }
 
         setStatus("loading");
         setErrorMsg("");
@@ -88,7 +101,7 @@ export default function HireForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+        <form onSubmit={handleSubmit} className="space-y-5">
             {/* Honeypot — invisible to humans, attracts bots */}
             <input type="checkbox" name="botcheck" className="hidden" aria-hidden="true" tabIndex={-1} />
 
@@ -137,7 +150,7 @@ export default function HireForm() {
                     style={{ ...inputStyle, appearance: "auto" }}
                     defaultValue=""
                 >
-                    {WORK_TYPES.map((t) => (
+                    {[{ label: "Select type of work…", value: "" }, ...workTypes].map((t: WorkType) => (
                         <option key={t.value} value={t.value} disabled={t.value === ""}>
                             {t.label}
                         </option>
@@ -167,7 +180,7 @@ export default function HireForm() {
                     <CheckCircle size={18} className="shrink-0 mt-0.5" />
                     <div>
                         <p className="font-semibold">Message sent!</p>
-                        <p className="opacity-80 mt-0.5">I'll get back to you within 1-2 business days.</p>
+                        <p className="opacity-80 mt-0.5">I'll get back to you within 1 business day.</p>
                     </div>
                 </div>
             )}
@@ -196,7 +209,7 @@ export default function HireForm() {
             </button>
 
             <p className="text-xs text-center text-muted-foreground/60">
-                Protected against spam · I'll reply within 1-2 business days
+                I'll reply within 1 business day
             </p>
         </form>
     );

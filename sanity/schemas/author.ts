@@ -71,6 +71,29 @@ export default defineType({
             title: 'Resume PDF',
             type: 'file',
         }),
+        defineField({
+            name: 'lookingFor',
+            title: 'Looking For (Hire Me page)',
+            description: 'List of roles/opportunities shown on the Hire Me page',
+            type: 'array',
+            of: [{ type: 'string' }],
+        }),
+        defineField({
+            name: 'workTypes',
+            title: 'Work Types (Hire Me form dropdown)',
+            description: 'Options shown in the "Type of Work" dropdown',
+            type: 'array',
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        { name: 'label', title: 'Label (shown in dropdown)', type: 'string' },
+                        { name: 'value', title: 'Value (sent in email)', type: 'string' },
+                    ],
+                    preview: { select: { title: 'label' } },
+                },
+            ],
+        }),
     ],
     preview: {
         select: {
