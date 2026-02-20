@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    trailingSlash: false,
     images: {
         // Required for static GitHub Pages — no server to run /_next/image optimization
         unoptimized: true,
