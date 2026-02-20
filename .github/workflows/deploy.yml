@@ -41,13 +41,13 @@ jobs:
 
       - name: Build with Next.js
         run: |
+          unset GITHUB_PAGES
           npm run build
           node scripts/build-static.js
         env:
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
           NEXT_PUBLIC_WEB3FORMS_KEY: ${{ secrets.NEXT_PUBLIC_WEB3FORMS_KEY }}
-          GITHUB_PAGES: ""
           NODE_ENV: production
 
       - name: Upload artifact
