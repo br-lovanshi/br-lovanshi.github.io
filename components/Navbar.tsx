@@ -11,6 +11,7 @@ const navItems = [
     { name: "Work", href: "/work" },
     { name: "Projects", href: "/projects" },
     { name: "Blog", href: "/blog" },
+    { name: "Hire Me", href: "/hire" },
 ];
 
 export default function Navbar() {
@@ -35,8 +36,8 @@ export default function Navbar() {
                                     key={item.href}
                                     href={item.href}
                                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
-                                            ? "text-white font-semibold"
-                                            : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                                        ? "text-white font-semibold"
+                                        : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                                         }`}
                                     style={isActive ? { background: "var(--indigo)" } : {}}
                                 >
@@ -85,8 +86,8 @@ export default function Navbar() {
                                     href={item.href}
                                     onClick={() => setIsOpen(false)}
                                     className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${isActive
-                                            ? "text-white"
-                                            : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                                        ? "text-white"
+                                        : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                                         }`}
                                     style={isActive ? { background: "var(--indigo)" } : {}}
                                 >
