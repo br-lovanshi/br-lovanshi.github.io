@@ -4,8 +4,6 @@ import { PortableText } from "next-sanity";
 import { Calendar, Briefcase } from "lucide-react";
 import Image from "next/image";
 
-export const revalidate = 60;
-
 export const metadata = {
     title: "Work | Brajesh Lovanshi",
     description: "My professional work history and experience.",

@@ -5,8 +5,6 @@ import { PortableText } from "next-sanity";
 import { Download, Github, Linkedin, Mail, User } from "lucide-react";
 import { urlForImage } from "@/lib/image";
 
-export const revalidate = 60;
-
 export const metadata = {
     title: "About | Brajesh Lovanshi",
     description: "Senior Software Engineer & Systems Architect.",

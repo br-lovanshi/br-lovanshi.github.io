@@ -3,8 +3,6 @@ import { client } from "@/lib/sanity.client";
 import { projectsQuery } from "@/lib/queries";
 import { ArrowUpRight, Layers } from "lucide-react";
 
-export const revalidate = 60;
-
 export const metadata = {
     title: "Projects | Brajesh Lovanshi",
     description: "A collection of systems, applications, and architectural challenges.",
