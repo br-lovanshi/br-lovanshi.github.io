@@ -3,8 +3,6 @@ import { ArrowRight, ArrowUpRight, BookOpen, Layers } from "lucide-react";
 import { client } from "@/lib/sanity.client";
 import { projectsQuery, postsQuery, authorQuery } from "@/lib/queries";
 
-export const revalidate = 60;
-
 async function getRecentPosts() {
   const posts = await client.fetch(postsQuery);
   return posts.slice(0, 4);

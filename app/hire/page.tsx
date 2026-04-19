@@ -3,8 +3,6 @@ import { client } from "@/lib/sanity.client";
 import { authorQuery } from "@/lib/queries";
 import { Briefcase, Clock, MessageSquare, Zap } from "lucide-react";
 
-export const revalidate = 60;
-
 export const metadata = {
     title: "Hire Me | Brajesh Lovanshi",
     description: "Open to full-time roles, freelance projects, and technical consultations. Send me a message and let's talk.",

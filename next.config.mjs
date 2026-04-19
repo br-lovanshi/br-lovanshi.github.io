@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    trailingSlash: false,
+    output: 'export',
+    trailingSlash: true,
     images: {
         // Required for static GitHub Pages — no server to run /_next/image optimization
         unoptimized: true,

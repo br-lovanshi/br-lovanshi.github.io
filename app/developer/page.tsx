@@ -3,8 +3,6 @@ import { client } from "@/lib/sanity.client";
 import { resourcesQuery } from "@/lib/queries";
 import { FileText, Wrench, Download, ExternalLink } from "lucide-react";
 
-export const revalidate = 60;
-
 export default async function DeveloperPage() {
     const resources = await client.fetch(resourcesQuery);
 
