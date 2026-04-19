@@ -8,11 +8,15 @@ const outDir = path.join(__dirname, '../out');
 
 function copyRecursiveSync(src, dest) {
     if (fs.existsSync(src)) {
-        if (!fs.existsSync(dest)) {
-            fs.mkdirSync(dest, { recursive: true });
-        }
-
         const stats = fs.statSync(src);
+        
+        if (!fs.existsSync(dest)) {
+            if (stats.isDirectory()) {
+                fs.mkdirSync(dest, { recursive: true });
+            } else {
+                fs.mkdirSync(path.dirname(dest), { recursive: true });
+            }
+        }
         if (stats.isDirectory()) {
             const items = fs.readdirSync(src);
             items.forEach((item) => {
