@@ -101,3 +101,15 @@ export const resourcesQuery = groq`
     "icon": icon.asset->url
   }
 `
+
+// Skills
+export const skillsQuery = groq`
+  *[_type == "skillCategory"] | order(order asc) {
+    title,
+    order,
+    skills[] {
+      name,
+      "logo": logo.asset->url
+    }
+  }
+`

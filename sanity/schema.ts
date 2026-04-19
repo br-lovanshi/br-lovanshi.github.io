@@ -7,7 +7,8 @@ import author from './schemas/author'
 import job from './schemas/job'
 import project from './schemas/project'
 import resource from './schemas/resource'
+import skillCategory from './schemas/skillCategory'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-    types: [post, author, category, job, project, resource, blockContent],
+    types: [post, author, category, job, project, resource, blockContent, skillCategory],
 }
